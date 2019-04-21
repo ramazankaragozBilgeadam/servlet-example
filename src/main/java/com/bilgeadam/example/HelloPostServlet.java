@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class HelloPostServlet extends HttpServlet {
 
@@ -18,6 +19,15 @@ public class HelloPostServlet extends HttpServlet {
         String sifre=req.getParameter("sifre");
 
         System.out.println("Adı: "+adi+" Soyadı: "+soyadi+" Kullanıcı Adı: "+kullaniciAdi+" Sifre: "+ sifre);
+
+
+        PrintWriter printWriter=resp.getWriter();
+
+        printWriter.write("<html><body>");
+        printWriter.write("<h1> Adı: "+adi+"</h1>");
+        printWriter.write("<h1> Soyadı: "+soyadi+"</h1>");
+        printWriter.write("<h1> Kullanıcı Adı: "+kullaniciAdi+"</h1>");
+        printWriter.write("<h1> Şifresi: "+sifre+"</h1>");
 
     }
 }
